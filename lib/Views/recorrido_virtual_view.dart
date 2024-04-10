@@ -10,10 +10,13 @@ class RecorridoVirtualView extends StatefulWidget {
 class _RecorridoVirtualViewState extends State<RecorridoVirtualView> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('Recorrido Virtual'),
-      )
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: Center(
+          child: Text('Recorrido Virtual'),
+        )
+      ),
     );
   }
 }

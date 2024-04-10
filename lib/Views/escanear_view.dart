@@ -10,10 +10,13 @@ class EscanearView extends StatefulWidget {
 class _EscanearViewState extends State<EscanearView> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('Escanear'),
-      )
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: Center(
+          child: Text('Escanear'),
+        )
+      ),
     );
   }
 }

@@ -10,9 +10,12 @@ class RegistroEventoView extends StatefulWidget {
 class _RegistroEventoViewState extends State<RegistroEventoView> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('Registro de Evento'),
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: Center(
+          child: Text('Registro de Evento'),
+        ),
       ),
     );
   }
