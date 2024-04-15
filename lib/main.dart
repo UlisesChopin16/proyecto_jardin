@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_jardin/Views/principal_view.dart';
+import 'package:proyecto_jardin/principal_view.dart';
 
 void main() {
   runApp(const MyApp());

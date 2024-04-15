@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_jardin/Components/drawer_item_component.dart';
 import 'package:proyecto_jardin/Constants/colors.dart';
-import 'package:proyecto_jardin/Views/acercade_view.dart';
-import 'package:proyecto_jardin/Views/escanear_view.dart';
-import 'package:proyecto_jardin/Views/inicio_view.dart';
-import 'package:proyecto_jardin/Views/recorrido_virtual_view.dart';
-import 'package:proyecto_jardin/Views/registro_evento_view.dart';
+import 'package:proyecto_jardin/User/Views/Screens/acercade_screen.dart';
+import 'package:proyecto_jardin/User/Views/Screens/Escaner/escanear_screen.dart';
+import 'package:proyecto_jardin/User/Views/Screens/inicio_screen.dart';
+import 'package:proyecto_jardin/User/Views/Screens/recorrido_virtual_screen.dart';
+import 'package:proyecto_jardin/User/Views/Screens/registro_evento_screen.dart';
+import 'package:proyecto_jardin/User/Views/Widgets/drawer_item_component.dart';
 
 class PrincipalView extends StatefulWidget {
   const PrincipalView({ Key? key }) : super(key: key);
@@ -21,6 +21,12 @@ class _PrincipalViewState extends State<PrincipalView> {
 
   int _selectedIndex = 0;
 
+  InicioView inicioView = const InicioView();
+  RecorridoVirtualView recorridoVirtualView = const RecorridoVirtualView();
+  EscanearView escanearView = const EscanearView();
+  RegistroEventoView registroEventoView = const RegistroEventoView();
+  AcercadeView acercadeView = const AcercadeView();
+
   // This method is used to get the screen size
   void _getScreenSize() {
     setState(() {
@@ -32,17 +38,18 @@ class _PrincipalViewState extends State<PrincipalView> {
   Widget _getScreen(int index) {
     switch (index) {
       case 0:
-        return const InicioView();
+        return inicioView;
+        // return escanearView;
       case 1:
-        return const RecorridoVirtualView();
+        return recorridoVirtualView;
       case 2:
-        return const EscanearView();
+        return escanearView;
       case 3:
-        return const RegistroEventoView();
+        return registroEventoView;
       case 4:
-        return const AcercadeView();
+        return acercadeView;
       default:
-        return const PrincipalView();
+        return inicioView;
     }
 
   }
