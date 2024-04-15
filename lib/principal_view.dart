@@ -38,8 +38,8 @@ class _PrincipalViewState extends State<PrincipalView> {
   Widget _getScreen(int index) {
     switch (index) {
       case 0:
-        return inicioView;
-        // return escanearView;
+        // return inicioView;
+        return recorridoVirtualView;
       case 1:
         return recorridoVirtualView;
       case 2:
