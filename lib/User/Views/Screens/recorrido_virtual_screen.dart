@@ -105,6 +105,7 @@ class _RecorridoVirtualViewState extends State<RecorridoVirtualView> {
   @override
   Widget build(BuildContext context) {
     _getScreenSize();
+
     heightImage = height;
     // obtener el ancho de la imagen en base a la relación de aspecto de la imagen (x = 3897, y = 3656) => x/y = 1.065
     widthImage = heightImage * 1.065;
@@ -127,7 +128,7 @@ class _RecorridoVirtualViewState extends State<RecorridoVirtualView> {
                       top = details.localPosition.dy;
                       left = details.localPosition.dx;
                     });
-                    getPointPositionImage(top, left);
+                    getPointPositionImage(left, top);
                   },
                   child: Container(
                     width: widthImage,
@@ -149,6 +150,14 @@ class _RecorridoVirtualViewState extends State<RecorridoVirtualView> {
                         pinPositioned(
                           top: getPointYPin(size: 0.3111097547743056), left: getPointXPin(size: 0.8360916873378381), 
                           number: 2
+                        ),
+                        pinPositioned(
+                          top: getPointYPin(size: 0.19538709852430558), left: getPointXPin(size: 0.8190104166666666), 
+                          number: 3
+                        ),
+                        pinPositioned(
+                          top: getPointYPin(size: 0.2592603895399306), left: getPointXPin(size: 0.5895156820552947), 
+                          number: 4
                         ),
                         pinPrueba(
                           top: top,
