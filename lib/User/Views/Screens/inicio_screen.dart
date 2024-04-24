@@ -1,29 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_jardin/Components/decorated_screen_component.dart';
 
-class InicioView extends StatefulWidget {
-  const InicioView({ Key? key }) : super(key: key);
 
-  @override
-  _InicioViewState createState() => _InicioViewState();
-}
+class InicioView extends StatelessWidget {
 
-class _InicioViewState extends State<InicioView> {
+  const InicioView({Key? key}) : super(key: key);
 
-  double width = 0;
-  double height = 0;
-
-
-  void _getScreenSize() {
-    setState(() {
-      width = MediaQuery.of(context).size.width;
-      height = MediaQuery.of(context).size.height * 0.78;
-    });
-  }
-
+  
   @override
   Widget build(BuildContext context) {
-    _getScreenSize();
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height * 0.78;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
