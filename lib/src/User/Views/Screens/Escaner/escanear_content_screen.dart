@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:proyecto_jardin/Components/button_component.dart';
-import 'package:proyecto_jardin/Components/decorated_screen_component.dart';
-import 'package:proyecto_jardin/User/BLoC/bloc_user.dart';
-import 'package:proyecto_jardin/User/Views/Screens/Escaner/info_plantas_screen.dart';
+import 'package:proyecto_jardin/src/Components/button_component.dart';
+import 'package:proyecto_jardin/src/Components/decorated_screen_component.dart';
+import 'package:proyecto_jardin/src/User/BLoC/bloc_user.dart';
+import 'package:proyecto_jardin/src/User/Views/Screens/Escaner/info_plantas_screen.dart';
 
 class EscanearContentScreen extends StatefulWidget {
-  const EscanearContentScreen({ Key? key }) : super(key: key);
+  const EscanearContentScreen({ super.key });
 
   @override
   _EscanearContentScreenState createState() => _EscanearContentScreenState();

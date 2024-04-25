@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_jardin/Constants/colors.dart';
-import 'package:proyecto_jardin/User/Views/Widgets/drawer_item_component.dart';
+import 'package:proyecto_jardin/src/Constants/colors.dart';
+import 'package:proyecto_jardin/src/User/Views/Widgets/drawer_item_component.dart';
 
 class DrawerComponent extends StatelessWidget {
   final List<Widget> views;
@@ -8,11 +8,11 @@ class DrawerComponent extends StatelessWidget {
   final double width;
 
   const DrawerComponent({
-    Key? key,
+    super.key,
     required this.views,
     required this.onTapDrawer,
     required this.width,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

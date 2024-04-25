@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AcercadeView extends StatefulWidget {
-  const AcercadeView({ Key? key }) : super(key: key);
+  const AcercadeView({ super.key });
 
   @override
   _AcercadeViewState createState() => _AcercadeViewState();

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_jardin/Constants/colors.dart';
+import 'package:proyecto_jardin/src/Constants/colors.dart';
 
 class DecoratedScreenComponent extends StatelessWidget {
 
@@ -8,10 +8,10 @@ class DecoratedScreenComponent extends StatelessWidget {
   final Widget child;
 
   const DecoratedScreenComponent({ 
-    Key? key,
+    super.key,
     required this.child,
     this.changeColors = false
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context){

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:proyecto_jardin/Constants/colors.dart';
-import 'package:proyecto_jardin/principal_view.dart';
+import 'package:proyecto_jardin/src/principal_view.dart';
+import 'package:proyecto_jardin/src/Constants/colors.dart';
 
 void main() {
   runApp(const MyApp());

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_jardin/Constants/colors.dart';
+import 'package:proyecto_jardin/src/Constants/colors.dart';
 
 class DrawerItemComponent extends StatelessWidget {
   final String title;
@@ -7,11 +7,11 @@ class DrawerItemComponent extends StatelessWidget {
   final void Function()? onTap;
 
   const DrawerItemComponent({
-    Key? key,
+    super.key,
     required this.title,
     required this.icon,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context){

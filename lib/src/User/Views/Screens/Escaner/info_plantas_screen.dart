@@ -5,9 +5,9 @@ class InfoPlantasScreen extends StatefulWidget {
   final String tipo;
 
   const InfoPlantasScreen({ 
-    Key? key,
+    super.key,
     required this.tipo
-  }) : super(key: key);
+  });
 
   @override
   _InfoPlantasScreenState createState() => _InfoPlantasScreenState();

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_jardin/Constants/colors.dart';
+import 'package:proyecto_jardin/src/Constants/colors.dart';
 
 class ButtonComponent extends StatelessWidget {
 
@@ -7,10 +7,10 @@ class ButtonComponent extends StatelessWidget {
   final void Function()? onPressed;
 
   const ButtonComponent({
-    Key? key,
+    super.key,
     required this.text,
     required this.onPressed
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context){

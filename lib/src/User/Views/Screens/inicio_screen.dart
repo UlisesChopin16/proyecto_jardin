@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_jardin/Components/decorated_screen_component.dart';
+import 'package:proyecto_jardin/src/Components/decorated_screen_component.dart';
 
 
 class InicioView extends StatelessWidget {
 
-  const InicioView({Key? key}) : super(key: key);
+  const InicioView({super.key});
 
   
   @override

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:proyecto_jardin/User/Views/Widgets/pin_positioned_component.dart';
+import 'package:proyecto_jardin/src/User/Views/Widgets/pin_positioned_component.dart';
 
 class RecorridoVirtualView extends StatefulWidget {
-  const RecorridoVirtualView({Key? key}) : super(key: key);
+  const RecorridoVirtualView({super.key});
 
   @override
   State<RecorridoVirtualView> createState() => _RecorridoVirtualViewState();

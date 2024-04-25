@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:proyecto_jardin/User/Views/Screens/Escaner/escanear_content_screen.dart';
+import 'package:proyecto_jardin/src/User/Views/Screens/Escaner/escanear_content_screen.dart';
 
 class EscanearView extends StatelessWidget {
   

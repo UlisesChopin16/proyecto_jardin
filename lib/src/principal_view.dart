@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_jardin/User/Views/Screens/acercade_screen.dart';
-import 'package:proyecto_jardin/User/Views/Screens/Escaner/escanear_screen.dart';
-import 'package:proyecto_jardin/User/Views/Screens/inicio_screen.dart';
-import 'package:proyecto_jardin/User/Views/Screens/recorrido_virtual_screen.dart';
-import 'package:proyecto_jardin/User/Views/Screens/registro_evento_screen.dart';
-import 'package:proyecto_jardin/User/Views/Widgets/drawer_component.dart';
+import 'package:proyecto_jardin/src/User/Views/Screens/Escaner/escanear_screen.dart';
+import 'package:proyecto_jardin/src/User/Views/Screens/acercade_screen.dart';
+import 'package:proyecto_jardin/src/User/Views/Screens/inicio_screen.dart';
+import 'package:proyecto_jardin/src/User/Views/Screens/recorrido_virtual_screen.dart';
+import 'package:proyecto_jardin/src/User/Views/Screens/registro_evento_screen.dart';
+import 'package:proyecto_jardin/src/User/Views/Widgets/drawer_component.dart';
 
 class PrincipalView extends StatefulWidget {
-  const PrincipalView({Key? key}) : super(key: key);
+  const PrincipalView({super.key});
 
   @override
   State<PrincipalView> createState() => _PrincipalViewState();
@@ -15,7 +15,6 @@ class PrincipalView extends StatefulWidget {
 
 class _PrincipalViewState extends State<PrincipalView> {
   late double _width;
-  late double _height;
 
   int _selectedIndex = 0;
 
@@ -38,7 +37,6 @@ class _PrincipalViewState extends State<PrincipalView> {
 
   void _getScreenSize() {
     _width = MediaQuery.of(context).size.width;
-    _height = MediaQuery.of(context).size.height;
   }
 
   onTapDrawer (int index) {
@@ -86,10 +84,10 @@ class DrawerNavigation extends StatelessWidget {
   final List<Widget> views;
 
   const DrawerNavigation({
-    Key? key,
+    super.key,
     required this.selectedIndex,
     required this.views,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
