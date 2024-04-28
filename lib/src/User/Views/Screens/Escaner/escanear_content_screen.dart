@@ -3,13 +3,13 @@ import 'package:get/get.dart';
 import 'package:proyecto_jardin/src/Components/button_component.dart';
 import 'package:proyecto_jardin/src/Components/decorated_screen_component.dart';
 import 'package:proyecto_jardin/src/User/BLoC/bloc_user.dart';
-import 'package:proyecto_jardin/src/User/Views/Screens/Escaner/info_plantas_screen.dart';
+import 'package:proyecto_jardin/src/extension_route.dart';
 
 class EscanearContentScreen extends StatefulWidget {
   const EscanearContentScreen({ super.key });
 
   @override
-  _EscanearContentScreenState createState() => _EscanearContentScreenState();
+  State<EscanearContentScreen> createState() => _EscanearContentScreenState();
 }
 
 class _EscanearContentScreenState extends State<EscanearContentScreen> {
@@ -30,10 +30,11 @@ class _EscanearContentScreenState extends State<EscanearContentScreen> {
 
     if(!context.mounted)return;
     
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (context) => InfoPlantasScreen(tipo: qrCode),
-      ),
+    context.toNamed(
+      '/escanear/infoPlantas', 
+      arguments: {
+        'qrCode': qrCode
+      }
     );
   }
 

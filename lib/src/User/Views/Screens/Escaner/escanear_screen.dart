@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:proyecto_jardin/src/User/Views/Screens/Escaner/escanear_content_screen.dart';
+import 'package:proyecto_jardin/src/User/Views/Screens/Escaner/info_plantas_screen.dart';
 
 class EscanearView extends StatelessWidget {
   
@@ -13,7 +14,11 @@ class EscanearView extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: false,
       ),
-      home: const EscanearContentScreen(),
+      initialRoute: '/escanear',
+      routes: {
+        '/escanear': (context) => const EscanearContentScreen(),
+        '/escanear/infoPlantas': (context) => const InfoPlantasScreen(),
+      },
     );
   }
 }

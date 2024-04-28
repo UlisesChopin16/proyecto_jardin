@@ -4,13 +4,13 @@ import 'package:proyecto_jardin/src/User/Views/Widgets/drawer_item_component.dar
 
 class DrawerComponent extends StatelessWidget {
   final List<Widget> views;
-  final Function(int) onTapDrawer;
+  final Function(int) onTapItemDrawer;
   final double width;
 
   const DrawerComponent({
     super.key,
     required this.views,
-    required this.onTapDrawer,
+    required this.onTapItemDrawer,
     required this.width,
   });
 
@@ -42,7 +42,7 @@ class DrawerComponent extends StatelessWidget {
             (index) => DrawerItemComponent(
               title: _getTitleDrawerItem(index),
               icon: _getViewIcon(index),
-              onTap: () => onTapDrawer(index),
+              onTap: () => onTapItemDrawer(index),
             ),
           ),
         ],

@@ -4,7 +4,7 @@ class AcercadeView extends StatefulWidget {
   const AcercadeView({ super.key });
 
   @override
-  _AcercadeViewState createState() => _AcercadeViewState();
+  State<AcercadeView> createState() => _AcercadeViewState();
 }
 
 class _AcercadeViewState extends State<AcercadeView> {

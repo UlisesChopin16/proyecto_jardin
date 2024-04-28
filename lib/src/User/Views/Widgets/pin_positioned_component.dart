@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proyecto_jardin/src/extension_route.dart';
 
 
 class PinPositionedComponent extends StatelessWidget {
@@ -68,6 +69,15 @@ class PinPositionedComponent extends StatelessWidget {
     return widthImage * size;
   }
 
+  onTap(BuildContext context,int number){
+    context.toNamed(
+      '/recorridoVirtual/imagen360',
+      arguments: {
+        'number': number
+      }
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
 
@@ -75,9 +85,7 @@ class PinPositionedComponent extends StatelessWidget {
       top: getPointYPin(size: top), 
       left: getPointXPin(size: left),
       child: InkWell(
-        onTap: () {
-          print('top: $top, left: $left, number: $number');
-        },
+        onTap: onTap(context,number),
         child: const Icon(
           Icons.location_on,
           color: Colors.red,

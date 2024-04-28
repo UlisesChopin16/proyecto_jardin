@@ -2,24 +2,28 @@ import 'package:flutter/material.dart';
 
 class InfoPlantasScreen extends StatefulWidget {
 
-  final String tipo;
-
   const InfoPlantasScreen({ 
     super.key,
-    required this.tipo
   });
 
   @override
-  _InfoPlantasScreenState createState() => _InfoPlantasScreenState();
+  State<InfoPlantasScreen> createState() => _InfoPlantasScreenState();
 }
 
 class _InfoPlantasScreenState extends State<InfoPlantasScreen> {
+
+
   @override
   Widget build(BuildContext context) {
+
+    final routeArgs = ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
+
+    String categoria = routeArgs['categoria'];
+
     return Scaffold(
       body: Center(
         child: Text(
-          'La tabla es de la categoria ${widget.tipo}'
+          'La tabla es de la categoria $categoria'
         ),
       ),
     );

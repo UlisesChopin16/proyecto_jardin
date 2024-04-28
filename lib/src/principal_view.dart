@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:proyecto_jardin/src/User/Views/Screens/Escaner/escanear_screen.dart';
 import 'package:proyecto_jardin/src/User/Views/Screens/acercade_screen.dart';
 import 'package:proyecto_jardin/src/User/Views/Screens/inicio_screen.dart';
-import 'package:proyecto_jardin/src/User/Views/Screens/recorrido_virtual_screen.dart';
+import 'package:proyecto_jardin/src/User/Views/Screens/RecorridoVirtual/recorrido_virtual_screen.dart';
 import 'package:proyecto_jardin/src/User/Views/Screens/registro_evento_screen.dart';
 import 'package:proyecto_jardin/src/User/Views/Widgets/drawer_component.dart';
 
@@ -30,7 +30,7 @@ class _PrincipalViewState extends State<PrincipalView> {
 
   late final DrawerComponent drawerComponent = DrawerComponent(
     views: _views,
-    onTapDrawer: onTapDrawer,
+    onTapItemDrawer: onTapItemDrawer,
     width: _width,
   );
 
@@ -39,7 +39,7 @@ class _PrincipalViewState extends State<PrincipalView> {
     _width = MediaQuery.of(context).size.width;
   }
 
-  onTapDrawer (int index) {
+  onTapItemDrawer (int index) {
     setState(() {
       _selectedIndex = index;
       titleBar = _getViewTitle(index);

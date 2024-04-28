@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:proyecto_jardin/src/User/Views/Widgets/pin_positioned_component.dart';
 
-class RecorridoVirtualView extends StatefulWidget {
-  const RecorridoVirtualView({super.key});
+class RecorridoVirtualContentScreen extends StatefulWidget {
+  const RecorridoVirtualContentScreen({ super.key });
 
   @override
-  State<RecorridoVirtualView> createState() => _RecorridoVirtualViewState();
+  State<RecorridoVirtualContentScreen> createState() => _RecorridoVirtualContentScreenState();
 }
 
-class _RecorridoVirtualViewState extends State<RecorridoVirtualView> {
+class _RecorridoVirtualContentScreenState extends State<RecorridoVirtualContentScreen> {
+
   double width = 0;
   double height = 0;
   final double widthImage = 500 * 1.416;
@@ -322,7 +323,6 @@ class _RecorridoVirtualViewState extends State<RecorridoVirtualView> {
     width = MediaQuery.of(context).size.width;
     height = MediaQuery.of(context).size.height;
   }
-  
 
   @override
   Widget build(BuildContext context) {
@@ -330,56 +330,53 @@ class _RecorridoVirtualViewState extends State<RecorridoVirtualView> {
     getScreenSize();
 
     redPin = heightImage * 0.043;
-    
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: SafeArea(
-          child: Center(
-            child: InteractiveViewer(
-              maxScale: 6,
-              minScale: 1,
-              boundaryMargin: const EdgeInsets.all(double.infinity),
-              child: SizedBox(
-                width: width,
-                height: height,
-                child: FittedBox(
-                  fit: BoxFit.contain,
-                  child: ConstrainedBox(
-                    constraints: BoxConstraints(
-                      maxHeight: heightImage,
-                      maxWidth: widthImage,
-                    ),
-                    child: GestureDetector(
-                      // Descomentar estas lineas en caso de querer poscicionar nuevos pines con el pin de prueba
-                      // onPanUpdate: (details){
-                      //   setState(() {
-                      //     top = details.localPosition.dy;
-                      //     left = details.localPosition.dx;
-                      //   });
-                      //   getPointPositionImage(left, top);
-                      // },
-                      child: Container(
-                        decoration: const BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage('assets/images/map.png',),
-                            fit: BoxFit.fill,
-                          )
-                        ),
-                        child: const Stack(
-                          alignment: Alignment.center,
-                          // comentar esta linea en caso de querer poscicionar nuevos pines con el pin de prueba
-                          children: listOfPins
 
-                          // Descomentar estas lineas en caso de querer poscicionar nuevos pines con el pin de prueba
-                          // Para posicionar un nuevo pin rojo, importa solo la punta de abajo del pin de prueba
-                          // children: [
-                          //   pinPrueba(
-                          //     top: top,
-                          //     left: left, 
-                          //   ),
-                          // ],
-                        ),
+    return Scaffold(
+      body: SafeArea(
+        child: Center(
+          child: InteractiveViewer(
+            maxScale: 6,
+            minScale: 1,
+            boundaryMargin: const EdgeInsets.all(double.infinity),
+            child: SizedBox(
+              width: width,
+              height: height,
+              child: FittedBox(
+                fit: BoxFit.contain,
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(
+                    maxHeight: heightImage,
+                    maxWidth: widthImage,
+                  ),
+                  child: GestureDetector(
+                    // Descomentar estas lineas en caso de querer poscicionar nuevos pines con el pin de prueba
+                    // onPanUpdate: (details){
+                    //   setState(() {
+                    //     top = details.localPosition.dy;
+                    //     left = details.localPosition.dx;
+                    //   });
+                    //   getPointPositionImage(left, top);
+                    // },
+                    child: Container(
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('assets/images/map.png',),
+                          fit: BoxFit.fill,
+                        )
+                      ),
+                      child: const Stack(
+                        alignment: Alignment.center,
+                        // comentar esta linea en caso de querer poscicionar nuevos pines con el pin de prueba
+                        children: listOfPins
+    
+                        // Descomentar estas lineas en caso de querer poscicionar nuevos pines con el pin de prueba
+                        // Para posicionar un nuevo pin rojo, importa solo la punta de abajo del pin de prueba
+                        // children: [
+                        //   pinPrueba(
+                        //     top: top,
+                        //     left: left, 
+                        //   ),
+                        // ],
                       ),
                     ),
                   ),
@@ -390,27 +387,26 @@ class _RecorridoVirtualViewState extends State<RecorridoVirtualView> {
         ),
       ),
     );
+
+    // Descomentar estas lineas en caso de querer poscicionar nuevos pines con el pin de prueba
+    // pinPrueba({
+    //   required double top,
+    //   required double left,
+    // }){
+    //   return Positioned(
+    //     top: top,
+    //     left: left,
+    //     child: InkWell(
+    //       onTap: () {
+    //         print('top: $top, left: $left');
+    //       },
+    //       child: const Icon(
+    //         Icons.location_on,
+    //         color: Colors.blue,
+    //         size: 30,
+    //       )
+    //     ),
+    //   );
+    // }
   }
-
-  // Descomentar estas lineas en caso de querer poscicionar nuevos pines con el pin de prueba
-  // pinPrueba({
-  //   required double top,
-  //   required double left,
-  // }){
-  //   return Positioned(
-  //     top: top,
-  //     left: left,
-  //     child: InkWell(
-  //       onTap: () {
-  //         print('top: $top, left: $left');
-  //       },
-  //       child: const Icon(
-  //         Icons.location_on,
-  //         color: Colors.blue,
-  //         size: 30,
-  //       )
-  //     ),
-  //   );
-  // }
-
 }

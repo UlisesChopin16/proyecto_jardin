@@ -4,7 +4,7 @@ class RegistroEventoView extends StatefulWidget {
   const RegistroEventoView({ super.key });
 
   @override
-  _RegistroEventoViewState createState() => _RegistroEventoViewState();
+  State<RegistroEventoView> createState() => _RegistroEventoViewState();
 }
 
 class _RegistroEventoViewState extends State<RegistroEventoView> {
