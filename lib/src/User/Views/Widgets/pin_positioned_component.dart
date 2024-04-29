@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_jardin/src/extension_route.dart';
+import 'package:flutter/services.dart';
+import 'package:proyecto_jardin/src/User/Views/Screens/RecorridoVirtual/imagen_360_screen.dart';
 
 
 class PinPositionedComponent extends StatelessWidget {
@@ -69,14 +70,6 @@ class PinPositionedComponent extends StatelessWidget {
     return widthImage * size;
   }
 
-  onTap(BuildContext context,int number){
-    context.toNamed(
-      '/recorridoVirtual/imagen360',
-      arguments: {
-        'number': number
-      }
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -85,7 +78,19 @@ class PinPositionedComponent extends StatelessWidget {
       top: getPointYPin(size: top), 
       left: getPointXPin(size: left),
       child: InkWell(
-        onTap: onTap(context,number),
+        onTap: (){
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => const Imagen360Screen(),
+              settings: RouteSettings(
+                arguments: {
+                  'number': number.toString()
+                }
+              )
+            )
+          
+          );
+        },
         child: const Icon(
           Icons.location_on,
           color: Colors.red,

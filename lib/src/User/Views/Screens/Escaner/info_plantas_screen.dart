@@ -21,6 +21,9 @@ class _InfoPlantasScreenState extends State<InfoPlantasScreen> {
     String categoria = routeArgs['categoria'];
 
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Información de la planta'),
+      ),
       body: Center(
         child: Text(
           'La tabla es de la categoria $categoria'

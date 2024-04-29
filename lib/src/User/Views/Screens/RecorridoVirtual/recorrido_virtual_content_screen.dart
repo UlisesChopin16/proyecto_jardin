@@ -291,6 +291,10 @@ class _RecorridoVirtualContentScreenState extends State<RecorridoVirtualContentS
   @override
   void initState() {
     super.initState();
+    SystemChrome.setEnabledSystemUIMode(
+      SystemUiMode.immersiveSticky,
+      overlays: [SystemUiOverlay.top],
+    );
     // Establecer la orientación horizontal al entrar en la vista de Recorrido Virtual
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.landscapeLeft,
@@ -305,6 +309,10 @@ class _RecorridoVirtualContentScreenState extends State<RecorridoVirtualContentS
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
+    SystemChrome.setEnabledSystemUIMode(
+      SystemUiMode.manual,
+      overlays: SystemUiOverlay.values,
+    );
     super.dispose();
   }
 
@@ -332,52 +340,62 @@ class _RecorridoVirtualContentScreenState extends State<RecorridoVirtualContentS
     redPin = heightImage * 0.043;
 
     return Scaffold(
-      body: SafeArea(
-        child: Center(
-          child: InteractiveViewer(
-            maxScale: 6,
-            minScale: 1,
-            boundaryMargin: const EdgeInsets.all(double.infinity),
-            child: SizedBox(
-              width: width,
-              height: height,
-              child: FittedBox(
-                fit: BoxFit.contain,
-                child: ConstrainedBox(
-                  constraints: BoxConstraints(
-                    maxHeight: heightImage,
-                    maxWidth: widthImage,
-                  ),
-                  child: GestureDetector(
-                    // Descomentar estas lineas en caso de querer poscicionar nuevos pines con el pin de prueba
-                    // onPanUpdate: (details){
-                    //   setState(() {
-                    //     top = details.localPosition.dy;
-                    //     left = details.localPosition.dx;
-                    //   });
-                    //   getPointPositionImage(left, top);
-                    // },
-                    child: Container(
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage('assets/images/map.png',),
-                          fit: BoxFit.fill,
-                        )
-                      ),
-                      child: const Stack(
-                        alignment: Alignment.center,
-                        // comentar esta linea en caso de querer poscicionar nuevos pines con el pin de prueba
-                        children: listOfPins
-    
-                        // Descomentar estas lineas en caso de querer poscicionar nuevos pines con el pin de prueba
-                        // Para posicionar un nuevo pin rojo, importa solo la punta de abajo del pin de prueba
-                        // children: [
-                        //   pinPrueba(
-                        //     top: top,
-                        //     left: left, 
-                        //   ),
-                        // ],
-                      ),
+      extendBodyBehindAppBar: true,
+      extendBody: true,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.menu,),
+          onPressed: (){
+            Scaffold.of(context).openDrawer();
+          },
+        )
+      ),
+      body: Center(
+        child: InteractiveViewer(
+          maxScale: 6,
+          minScale: 1,
+          boundaryMargin: const EdgeInsets.all(double.infinity),
+          child: SizedBox(
+            width: width,
+            height: height,
+            child: FittedBox(
+              fit: BoxFit.contain,
+              child: ConstrainedBox(
+                constraints: BoxConstraints(
+                  maxHeight: heightImage,
+                  maxWidth: widthImage,
+                ),
+                child: GestureDetector(
+                  // Descomentar estas lineas en caso de querer poscicionar nuevos pines con el pin de prueba
+                  // onPanUpdate: (details){
+                  //   setState(() {
+                  //     top = details.localPosition.dy;
+                  //     left = details.localPosition.dx;
+                  //   });
+                  //   getPointPositionImage(left, top);
+                  // },
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('assets/images/map.png',),
+                        fit: BoxFit.fill,
+                      )
+                    ),
+                    child: const Stack(
+                      alignment: Alignment.center,
+                      // comentar esta linea en caso de querer poscicionar nuevos pines con el pin de prueba
+                      children: listOfPins
+          
+                      // Descomentar estas lineas en caso de querer poscicionar nuevos pines con el pin de prueba
+                      // Para posicionar un nuevo pin rojo, importa solo la punta de abajo del pin de prueba
+                      // children: [
+                      //   pinPrueba(
+                      //     top: top,
+                      //     left: left, 
+                      //   ),
+                      // ],
                     ),
                   ),
                 ),

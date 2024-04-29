@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:proyecto_jardin/src/Components/button_component.dart';
 import 'package:proyecto_jardin/src/Components/decorated_screen_component.dart';
 import 'package:proyecto_jardin/src/User/BLoC/bloc_user.dart';
-import 'package:proyecto_jardin/src/extension_route.dart';
+import 'package:proyecto_jardin/src/User/Views/Screens/Escaner/info_plantas_screen.dart';
 
 class EscanearContentScreen extends StatefulWidget {
   const EscanearContentScreen({ super.key });
@@ -30,11 +30,16 @@ class _EscanearContentScreenState extends State<EscanearContentScreen> {
 
     if(!context.mounted)return;
     
-    context.toNamed(
-      '/escanear/infoPlantas', 
-      arguments: {
-        'qrCode': qrCode
-      }
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => const InfoPlantasScreen(),
+        settings: RouteSettings(
+          arguments: {
+            'qrCode': qrCode
+          }
+        )
+      )
+      
     );
   }
 
@@ -42,6 +47,16 @@ class _EscanearContentScreenState extends State<EscanearContentScreen> {
   Widget build(BuildContext context) {
     getSize();
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: const Text('Escanear código QR'),
+        leading: IconButton(
+          icon: const Icon(Icons.menu),
+          onPressed: (){
+            Scaffold.of(context).openDrawer();
+          },
+        ),
+      ),
       body: DecoratedScreenComponent(
         changeColors: true,
         child: Center(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_jardin/src/User/Views/Screens/Escaner/escanear_screen.dart';
 import 'package:proyecto_jardin/src/User/Views/Screens/acercade_screen.dart';
-import 'package:proyecto_jardin/src/User/Views/Screens/inicio_screen.dart';
+import 'package:proyecto_jardin/src/User/Views/Screens/Inicio/inicio_screen.dart';
 import 'package:proyecto_jardin/src/User/Views/Screens/RecorridoVirtual/recorrido_virtual_screen.dart';
 import 'package:proyecto_jardin/src/User/Views/Screens/registro_evento_screen.dart';
 import 'package:proyecto_jardin/src/User/Views/Widgets/drawer_component.dart';
@@ -42,7 +42,6 @@ class _PrincipalViewState extends State<PrincipalView> {
   onTapItemDrawer (int index) {
     setState(() {
       _selectedIndex = index;
-      titleBar = _getViewTitle(index);
     });
     Navigator.of(context).pop();
   }
@@ -51,30 +50,11 @@ class _PrincipalViewState extends State<PrincipalView> {
   Widget build(BuildContext context) {
     _getScreenSize();
     return Scaffold(
-      appBar: AppBar(
-        title: Text(titleBar),
-      ),
       drawer: drawerComponent,
       body: DrawerNavigation(selectedIndex: _selectedIndex, views: _views),
     );
   }
 
-  String _getViewTitle(int index) {
-    switch (index) {
-      case 0:
-        return 'Inicio';
-      case 1:
-        return 'Recorrido virtual';
-      case 2:
-        return 'Escanear QR plantas';
-      case 3:
-        return 'Registro para eventos';
-      case 4:
-        return 'Acerca de nosotros';
-      default:
-        return 'Bienvenido';
-    }
-  }
   
 }
 

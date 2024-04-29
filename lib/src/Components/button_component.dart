@@ -21,17 +21,17 @@ class ButtonComponent extends StatelessWidget {
           borderRadius: BorderRadius.circular(30)
         ),
         padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-        textStyle: const TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-          color: Colors.white
-        ),
         
       ),
       onPressed: onPressed,
       child: Text(
         text,
         textAlign: TextAlign.center,
+        style: const TextStyle(
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+          color: Colors.white
+        )
       ),
     );
   }
