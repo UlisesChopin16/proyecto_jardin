@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_jardin/src/User/Views/Screens/Escaner/escanear_screen.dart';
 import 'package:proyecto_jardin/src/User/Views/Screens/acercade_screen.dart';
-import 'package:proyecto_jardin/src/User/Views/Screens/Inicio/inicio_screen.dart';
+import 'package:proyecto_jardin/src/User/Views/Screens/inicio_screen.dart';
 import 'package:proyecto_jardin/src/User/Views/Screens/RecorridoVirtual/recorrido_virtual_screen.dart';
 import 'package:proyecto_jardin/src/User/Views/Screens/registro_evento_screen.dart';
 import 'package:proyecto_jardin/src/User/Views/Widgets/drawer_component.dart';
+import 'package:proyecto_jardin/src/drawer_navigation.dart';
 
 class PrincipalView extends StatefulWidget {
   const PrincipalView({super.key});
@@ -56,23 +57,6 @@ class _PrincipalViewState extends State<PrincipalView> {
   }
 
   
-}
-
-class DrawerNavigation extends StatelessWidget {
-
-  final int selectedIndex;
-  final List<Widget> views;
-
-  const DrawerNavigation({
-    super.key,
-    required this.selectedIndex,
-    required this.views,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return views[selectedIndex];
-  }
 }
 
 

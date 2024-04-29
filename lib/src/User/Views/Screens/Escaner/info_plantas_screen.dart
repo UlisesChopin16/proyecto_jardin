@@ -18,7 +18,7 @@ class _InfoPlantasScreenState extends State<InfoPlantasScreen> {
 
     final routeArgs = ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
 
-    String categoria = routeArgs['categoria'];
+    String categoria = routeArgs['qrCode'];
 
     return Scaffold(
       appBar: AppBar(

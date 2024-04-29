@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_jardin/src/Components/decorated_screen_component.dart';
 
-class InicioContentScreen extends StatelessWidget {
-  const InicioContentScreen({ super.key, });
+class InicioView extends StatelessWidget {
+  const InicioView({ super.key, });
 
   @override
   Widget build(BuildContext context) {
