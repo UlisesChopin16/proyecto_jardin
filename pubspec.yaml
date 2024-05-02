@@ -66,6 +66,7 @@ flutter:
   assets:
     - assets/images/codigo-qr.gif
     - assets/images/
+    - assets/files/
 
   #   - images/a_dot_ham.jpeg
 

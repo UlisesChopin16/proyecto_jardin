@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proyecto_jardin/src/Constants/colors.dart';
 
 class DrawerNavigation extends StatelessWidget {
 
@@ -15,6 +16,20 @@ class DrawerNavigation extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Palette.green1,
+        ),
+        inputDecorationTheme: const InputDecorationTheme(
+          border: UnderlineInputBorder(
+            borderSide: BorderSide(
+              color: Colors.black,
+              width: 8
+            ),
+          ),
+        ),
+        useMaterial3: false,
+      ),
       home: views[selectedIndex],
     );
   }

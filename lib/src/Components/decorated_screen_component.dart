@@ -2,15 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:proyecto_jardin/src/Constants/colors.dart';
 
 class DecoratedScreenComponent extends StatelessWidget {
-
-  final bool changeColors;
   
-  final Widget child;
+  final List<Widget> children;
+  final MainAxisAlignment mainAxisAlignment;
 
   const DecoratedScreenComponent({ 
     super.key,
-    required this.child,
-    this.changeColors = false
+    this.mainAxisAlignment = MainAxisAlignment.center,
+    required this.children,
   });
 
   @override
@@ -19,32 +18,43 @@ class DecoratedScreenComponent extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     return Stack(
       children: [
-        dibujo(
-          width: width,
-          height: height,
-          painter: CuadroUno(color: !changeColors ? Palette.green1 : Palette.beige2),
+        const Dibujo(
+          painter: CuadroUno(color: Palette.green1),
         ),
-        dibujo(
-          width: width,
-          height: height,
-          painter: CuadroDos(color: !changeColors ? Palette.beige2 : Palette.green1)
+        const Dibujo(
+          painter: CuadroDos(color: Palette.beige2 )
         ),
         Positioned(
           top: 0,
           left: 0,
           width: width,
           height: height * 0.78,
-          child: child
+          child: Column(
+            mainAxisAlignment: mainAxisAlignment,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: children,
+          )
         ),
       ],
     );
   }
 
-  dibujo({
-    required double width,
-    required double height,
-    required CustomPainter painter,
-  }){
+  
+}
+
+class Dibujo extends StatelessWidget {
+
+  final CustomPainter painter;
+
+  const Dibujo({
+    super.key,
+    required this.painter
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return Positioned(
       top: height * 0.55,
       left: 0,

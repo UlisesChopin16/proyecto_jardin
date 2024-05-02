@@ -58,34 +58,26 @@ class _EscanearViewState extends State<EscanearView> {
         ),
       ),
       body: DecoratedScreenComponent(
-        changeColors: true,
-        child: Center(
-          child: FittedBox(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                    image: const DecorationImage(
-                      image: AssetImage('assets/images/codigo-qr.gif'),
-                      fit: BoxFit.cover
-                    )
-                  ),
-                  width: height * 0.3,
-                  height: height * 0.3,
-                ),
-                const SizedBox(
-                  height: 30,
-                ),
-                ButtonComponent(
-                  text: 'Escanear',
-                  onPressed: _scanQR,
-                )
-              ],
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(30),
+              image: const DecorationImage(
+                image: AssetImage('assets/images/codigo-qr.gif'),
+                fit: BoxFit.cover
+              )
             ),
+            width: height * 0.3,
+            height: height * 0.3,
           ),
-        ),
+          const SizedBox(
+            height: 30,
+          ),
+          ButtonComponent(
+            text: 'Escanear',
+            onPressed: _scanQR,
+          )
+        ],
       )
     );
   }

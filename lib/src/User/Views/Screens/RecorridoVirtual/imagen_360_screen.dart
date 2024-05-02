@@ -42,6 +42,7 @@ class _Imagen360ScreenState extends State<Imagen360Screen> {
 
     return Scaffold(
       extendBodyBehindAppBar: true,
+      extendBody: true,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
