@@ -37,7 +37,7 @@ class RegistroEventoView extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: height * 0.15),
+          SizedBox(height: height * 0.1),
           const Formulario(),
         ],
       )
@@ -67,52 +67,60 @@ class _FormularioState extends State<Formulario> {
     return Form(
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 40),
-        padding: const EdgeInsets.symmetric(horizontal: 30,vertical: 20),
+        padding: const EdgeInsets.all(20),
         width: width,
         height: height * 0.28,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
           color: Palette.beige1
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            const Text(
-              '¡Registrate para estar enterado de todo!',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold
-              ),
-            ),
-            TextFormField(
-              onChanged: (value){
-                setState(() {
-                  correo = value;
-                });
-              },
-              decoration:   InputDecoration(
-                hintText: 'E-mail',
-                hintStyle: const TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold
+        child: FittedBox(
+          fit: BoxFit.fitWidth,
+          child: SizedBox(
+            width: width,
+            height: height * 0.3,
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text(
+                  '¡Registrate para estar enterado de todo!',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold
+                  ),
                 ),
-                focusedBorder: const UnderlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Colors.black
-                  )
+                TextFormField(
+                  onChanged: (value){
+                    setState(() {
+                      correo = value;
+                    });
+                  },
+                  decoration:   InputDecoration(
+                    hintText: 'E-mail',
+                    hintStyle: const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold
+                    ),
+                    focusedBorder: const UnderlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.black
+                      )
+                    ),
+                    border: Theme.of(context).inputDecorationTheme.border,
+                  ),
                 ),
-                border: Theme.of(context).inputDecorationTheme.border,
-              ),
+                ButtonComponent(
+                  text: 'Registrarme',
+                  onPressed: () async {
+                    
+                    // print(correo);
+                  },
+                )
+              ],
             ),
-            ButtonComponent(
-              text: 'Registrarme',
-              onPressed: () async {
-                
-                // print(correo);
-              },
-            )
-          ],
+          ),
         ),
       ),
     );

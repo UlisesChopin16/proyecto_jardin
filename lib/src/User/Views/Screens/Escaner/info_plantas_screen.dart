@@ -59,10 +59,10 @@ class _InfoPlantasScreenState extends State<InfoPlantasScreen> {
               border: TableBorder.all(color: Palette.beige2),
               columns: const <DataColumn>[
                 DataColumn(
-                  label: Expanded(
+                  label: Flexible(
                     child: Center(
                       child: Text(
-                        'Nombre común',
+                        'Nombre\ncomún',
                         textAlign: TextAlign.center,
                       ),
                     ),
@@ -83,19 +83,13 @@ class _InfoPlantasScreenState extends State<InfoPlantasScreen> {
                   return DataRow(
                     cells: <DataCell>[
                       DataCell(
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(entry.key),
-                        )
+                        Text(entry.key)
                       ),
                       DataCell(
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            entry.value,
-                            maxLines: 3,
-                            overflow: TextOverflow.ellipsis,
-                          ),
+                        Text(
+                          entry.value,
+                          maxLines: 3,
+                          overflow: TextOverflow.ellipsis,
                         )
                       ),
                     ],
