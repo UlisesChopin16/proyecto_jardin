@@ -4,6 +4,7 @@ import 'package:proyecto_jardin/src/Components/button_component.dart';
 import 'package:proyecto_jardin/src/Components/decorated_screen_component.dart';
 import 'package:proyecto_jardin/src/User/BLoC/bloc_user.dart';
 import 'package:proyecto_jardin/src/User/Views/Screens/Escaner/info_plantas_screen.dart';
+import 'package:proyecto_jardin/src/User/Views/Widgets/snackbar_component.dart';
 
 class EscanearView extends StatefulWidget {
   const EscanearView({ super.key });
@@ -14,7 +15,7 @@ class EscanearView extends StatefulWidget {
 
 class _EscanearViewState extends State<EscanearView> {
 
-  final userBloc = Get.put(UserBloc());
+  final userBloc = Get.find<UserBloc>();
 
   double width = 0;
   double height = 0;
@@ -27,6 +28,14 @@ class _EscanearViewState extends State<EscanearView> {
   Future<void> _scanQR() async {
 
     String qrCode = await userBloc.escanearCodigo();
+    Map<String,String> datos = await userBloc.leerArchivo(qrCode);
+
+    if(datos.containsKey('error')){
+      if(!context.mounted)return;
+      SnackBarComponent(context).snackBarError('No se encontró información de la plantas');
+      return;
+    }
+
 
     if(!context.mounted)return;
     
@@ -35,7 +44,8 @@ class _EscanearViewState extends State<EscanearView> {
         builder: (context) => const InfoPlantasScreen(),
         settings: RouteSettings(
           arguments: {
-            'qrCode': qrCode
+            'titulo': qrCode,
+            'datos': datos
           }
         )
       )

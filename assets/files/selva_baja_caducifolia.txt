@@ -1,0 +1,24 @@
+NANCHE:Byrsonima crassifolia (L.) Kunth
+GRANJEL:Randia echinocarpa Moc. & Sessé ex DC. 
+CUACHALALATE:Amphipterygium adstringens (Schltdl.) Standl.
+FLOR DE MAYO:Plumeria rubra L.fo. alba
+PEGAHUESO:Euphorbia tanquahuete Sessé & Moç.
+PALO BRASIL:Haematoxylum brasiletto H. Karst. 
+A. ZOPILOTE:Swietenia humilis Zucc.
+COPAL:Bursera spp.
+LLUVIA DE ORO:Cassia fistula L.
+TAMARINDO:Tamarindus indica L.
+AMATE:Ficus sp.
+FLOR DE CAMARON:Caesalpinia pulcherrima (L.) Sw.
+PAROTA:Enterolobium cyclocarpum (Jacq.) Griseb.
+CEIBA:Ceiba pentandra (L.) Gaertn.
+TEPEHUAJE:Lysiloma divaricatum (Jacq.) Macbride
+CAZAHUTE:Ipomoea arborescens G.Don
+TAPAQUESO:Trichilia hirta L.
+MATA RATA:Gliricidia sepium (Jacq.) Kunth ex Walp. 
+POCHOTE:Ceiba aesculifolia (Kunth) Britten & Baker f. 
+CHICO ZAPOTE:Manilkara sapota (L.) Van Royen 
+GUAJE ROJO:Leucaena esculenta (Moc. & Sessé ex DC.) Benth. 
+GUAMUCHIL:Pithecellobium dulce (Roxb.) Benth. 
+PARACA:Senna skinneri (Benth.) H.S. Irwin & Barneby 
+CLAVELLINO:Pseudobombax ellipticum (Kunth) Dugand

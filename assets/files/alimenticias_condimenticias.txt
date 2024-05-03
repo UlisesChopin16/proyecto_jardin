@@ -1,0 +1,28 @@
+OREGANO:Lippia graveolens Kunth
+NOPAL:Opuntia ficus-indica (L.) Mill.
+CACAHUATE:Arachis hypogea L.
+CHILES:Capsicum spp.
+JICAMA:Pachyrhizus erosus (L.) Urb.
+TOMILLO:Thymus vulgaris L.
+CAMOTE:Ipomoea batatas (L.) Lam.
+MEJORANA:Origanum majorana L.
+GUANDUL:Cajanus cajan (L.) Millsp.
+HUAZONTLE:Chenopodium nuttalliae Saff.
+PAPALO QUELITE:Porophyllum ruderale (Jacq) Cass.
+AMARANTO:Amaranthus cruentus L.
+PEREJIL:Petroselinum sativum L.
+OREGANO OREJON:Plectranthus amboinicus (Lour.) Spreng
+APIO:Apium graveolens L.
+JITOMATE:Lycopersicon esculentum Mill.
+CAÑA DE AZUCAR:Saccharum officinarum L.
+COL:Brassica oleracea L.
+PIÑA:Ananas comosus (L.) Merr.
+RABANO:Raphanus sativus L.
+BERENJENA:Solanum melongena L.
+BETABEL:Beta vulgaris L.
+CEBOLLA:Allium cepa L.
+FRIJOL:Phaseolus vulgaris L.
+JENJIBRE AZUL:Dichorisandra thyrsiflora J.C. Mikan
+JENGIBRE ROJO:Costus barbatus Suess.
+CALABAZA:Cucurbita pepo L.
+CURCUMA:Curcuma longa L.

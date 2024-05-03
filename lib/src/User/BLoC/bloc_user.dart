@@ -55,7 +55,6 @@ class UserBloc extends GetxController {
     } finally {
       isLoading.value = false;
     }
-    print(mapa);
     return mapa;
   }
 }

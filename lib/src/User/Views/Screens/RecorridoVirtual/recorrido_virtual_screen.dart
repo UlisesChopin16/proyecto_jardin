@@ -346,7 +346,10 @@ class _RecorridoVirtualView extends State<RecorridoVirtualView> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.menu,),
+          icon: const Icon(
+            Icons.menu,
+            color: Colors.black,
+          ),
           onPressed: (){
             Scaffold.of(context).openDrawer();
           },

@@ -1,0 +1,37 @@
+LLANTEN:Plantago major L.                                                                 
+CACAO:Theobroma cacao L.                                                                
+H. DULCE:Phyla scaberrima (Juss. ex Pers.) Moldenke                                          
+GLORIETA DE SALVIAS:Salvia spp.                                                                      
+CHANCLANA:Cuphea micropetala Kunth                                                          
+PERICÓN:Tagetes lucida Cav.                                                               
+LECHUGUILLA:Ajuga reptans L.                                                                  
+ESTEVIA:Stevia rebaudiana Bertoni                                                         
+ZABILA:Aloe vera L.                                                                      
+DORMILONA:Mimosa affinis B. L. Rob                                                          
+ARNICA:Heterotheca inuloides Cass.                                                       
+AJENJO:Artemisia absinthium L.                                                           
+SUELDA CONSUELDA:Symphytum officinale L.                                                           
+TROMPETILLA:Bouvardia ternifolia (Cav.) Schltdl.                                              
+PETATILLO:Thenardia floribunda Kunth                                                        
+H. DEL SAPO:Eryngium sp.                                                                      
+TE LIMON:Cymbopogon citratus (DC.) Stapf                                                   
+ROSA DE CASTILLA:Rosa centifolia L.                                                                
+ZOAPATLE:Montanoa tomentosa Cerv.                                                          
+ISTAFIATE:Artemisia ludoviciana var. mexicana (Willd. ex Spreng.) Fernald                    
+CLAVILLO:Ludwigia octovalvis (Jacq.) P.H.Raven                                              
+TOLOACHE:Datura stramonium L.                                                              
+TABACO CIMARRON:Nicotiana tabacum L.                                                              
+TABACO BLANCO:Nicotiana glauca Graham                                                           
+COLA DE CABALLO:Equisetum hyemale L.                                                              
+ROMERO:Rosmarinus officinalis L.                                                         
+PRODIGIOSA:Calea ternifolia Humb., Bonpl. & Kunth                                            
+VAPORUB:Plectranthus tomentifolius Suddee                                                 
+AXIHUITL:Ageratina conspicua R.M. King & H. Rob.                                           
+TRONADOR:Bryophyllum pinnatum (Lam.) Oken                                                  
+TE NEGRO:Ruellia brittoniana Leonard                                                       
+CAÑA DE JABALI:Costus pulverulentus C. Presl                                                     
+CABEZONA:Leonotis nepetifolia (L.) R. Br.                                                  
+SAUCO:Sambucus nigravar. canadensis (L.) B. L. Turner                                   
+INSULINA:Justicia secunda Wahl.                                                            
+TRONADORA:Tecoma stans (L.). Juss ex Kunth.                                                 
+CAPITANEJA:Verbesina crocata (Cav.) Less.
