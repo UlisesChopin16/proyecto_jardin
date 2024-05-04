@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:proyecto_jardin/src/User/BLoC/bloc_user.dart';
 import 'package:proyecto_jardin/src/User/Views/Screens/Escaner/escanear_screen.dart';
 import 'package:proyecto_jardin/src/User/Views/Screens/acercade_screen.dart';
 import 'package:proyecto_jardin/src/User/Views/Screens/inicio_screen.dart';
@@ -15,6 +17,9 @@ class PrincipalView extends StatefulWidget {
 }
 
 class _PrincipalViewState extends State<PrincipalView> {
+
+  final userBloc = Get.find<UserBloc>();
+
   late double _width;
 
   int _selectedIndex = 0;
@@ -50,6 +55,12 @@ class _PrincipalViewState extends State<PrincipalView> {
   @override
   Widget build(BuildContext context) {
     _getScreenSize();
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+
+    userBloc.padding.value = mediaQueryData.padding;
+    userBloc.viewInsets.value = mediaQueryData.viewInsets;
+
+
     return Scaffold(
       drawer: drawerComponent,
       body: DrawerNavigation(selectedIndex: _selectedIndex, views: _views),

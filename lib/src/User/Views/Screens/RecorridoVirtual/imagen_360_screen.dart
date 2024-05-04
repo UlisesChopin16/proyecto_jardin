@@ -13,7 +13,6 @@ class _Imagen360ScreenState extends State<Imagen360Screen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     // Restaurar la orientación vertical al entrar a la vista de Recorrido Virtual
     SystemChrome.setPreferredOrientations([

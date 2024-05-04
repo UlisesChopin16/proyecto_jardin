@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:proyecto_jardin/src/Constants/colors.dart';
+import 'package:proyecto_jardin/src/User/BLoC/bloc_user.dart';
 
 class DecoratedScreenComponent extends StatelessWidget {
   
@@ -14,28 +16,33 @@ class DecoratedScreenComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context){
+    final userBloc = Get.find<UserBloc>();
     double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
-    return Stack(
-      children: [
-        const Dibujo(
-          painter: CuadroUno(color: Palette.green1),
-        ),
-        const Dibujo(
-          painter: CuadroDos(color: Palette.beige2 )
-        ),
-        Positioned(
-          top: 0,
-          left: 0,
-          width: width,
-          height: height * 0.78,
-          child: Column(
-            mainAxisAlignment: mainAxisAlignment,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: children,
-          )
-        ),
-      ],
+    double height = MediaQuery.of(context).size.height - (AppBar().preferredSize.height + userBloc.padding.value.top);
+    return SizedBox(
+      width: width,
+      height: height,
+      child: Stack(
+        children: [
+          const Dibujo(
+            painter: CuadroUno(color: Palette.green1),
+          ),
+          const Dibujo(
+            painter: CuadroDos(color: Palette.beige2 )
+          ),
+          Positioned(
+            top: 0,
+            left: 0,
+            width: width,
+            height: height * 0.78,
+            child: Column(
+              mainAxisAlignment: mainAxisAlignment,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: children,
+            )
+          ),
+        ],
+      ),
     );
   }
 
@@ -55,6 +62,7 @@ class Dibujo extends StatelessWidget {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
+
     return Positioned(
       top: height * 0.55,
       left: 0,
@@ -82,7 +90,6 @@ class CuadroUno extends CustomPainter{
 
   @override
   void paint(Canvas canvas, Size size) {
-    // TODO: implement paint
     Paint pencil = Paint();
     pencil.style = PaintingStyle.fill;
     pencil.strokeWidth = 5;
@@ -104,7 +111,6 @@ class CuadroUno extends CustomPainter{
 
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    // TODO: implement shouldRepaint
     return true;
   }
 }
@@ -120,7 +126,7 @@ class CuadroDos extends CustomPainter{
 
   @override
   void paint(Canvas canvas, Size size) {
-    // TODO: implement paint
+
     Paint pencil = Paint();
     pencil.style = PaintingStyle.fill;
     pencil.strokeWidth = 5;
@@ -142,7 +148,6 @@ class CuadroDos extends CustomPainter{
 
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    // TODO: implement shouldRepaint
     return true;
   }
 }

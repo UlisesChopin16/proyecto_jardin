@@ -1,5 +1,6 @@
 import 'dart:isolate';
 
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:get/get.dart';
@@ -7,6 +8,10 @@ import 'package:get/get.dart';
 class UserBloc extends GetxController {
 
   var isLoading = false.obs;
+
+  var viewInsets = EdgeInsets.zero.obs;
+  var padding = EdgeInsets.zero.obs;
+
 
   Future<String> escanearCodigo() async {
     String qrCode = '';
