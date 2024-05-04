@@ -31,9 +31,9 @@ class _EscanearViewState extends State<EscanearView> {
     Map<String,String> datos = await userBloc.leerArchivo(qrCode);
 
     if(datos.containsKey('error')){
-      if(!context.mounted)return;
-      SnackBarComponent(context).snackBarError('No se encontró información de la plantas');
-      return;
+      datos = {
+        'Datos': qrCode,
+      };
     }
 
 

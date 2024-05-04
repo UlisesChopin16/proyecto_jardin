@@ -15,11 +15,6 @@ class _InfoPlantasScreenState extends State<InfoPlantasScreen> {
 
   String obtenerTitulo(String titulo) {
     
-
-    if(titulo == 'alimenticias_condimenticias') {
-      return 'Alimenticias y condimenticias';
-    }
-
     switch (titulo) {
       case 'alimenticias_condimenticias':
         return 'Plantas alimenticias y condimenticias';
@@ -28,7 +23,7 @@ class _InfoPlantasScreenState extends State<InfoPlantasScreen> {
       case 'selva_baja_caducifolia':
         return 'Selva baja caducifolia';
       default: 
-        return 'Plantas';
+        return 'Información';
     }
   }
 
@@ -49,55 +44,78 @@ class _InfoPlantasScreenState extends State<InfoPlantasScreen> {
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(20),
-          child: SingleChildScrollView(
-            child: DataTable(
-              dataRowMinHeight: 40,
-              dataRowMaxHeight: 80,
-              headingRowHeight: 50,
-              horizontalMargin: 18,
-              headingRowColor: MaterialStateProperty.all(Palette.beige2),
-              border: TableBorder.all(color: Palette.beige2),
-              columns: const <DataColumn>[
-                DataColumn(
-                  label: Flexible(
-                    child: Center(
-                      child: Text(
-                        'Nombre\ncomún',
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ),
+          child: TablaPlantas(datosPlantas: datosPlantas)
+        )
+      ),
+    );
+  }
+}
+
+class TablaPlantas extends StatelessWidget {
+  const TablaPlantas({
+    super.key,
+    required this.datosPlantas,
+  });
+
+  final Map<String, String> datosPlantas;
+
+  @override
+  Widget build(BuildContext context) {
+
+    final List<String> columns;
+
+    if(datosPlantas.containsKey('Datos')){
+      columns = ['Datos', 'Contenido'];
+    }else{
+      columns = ['Nombre\ncomún', 'Nombre científico'];
+    }
+
+    return SingleChildScrollView(
+      child: DataTable(
+        dataRowMinHeight: 40,
+        dataRowMaxHeight: 80,
+        headingRowHeight: 50,
+        horizontalMargin: 18,
+        headingRowColor: MaterialStateProperty.all(Palette.beige2),
+        border: TableBorder.all(color: Palette.beige2),
+        columns: <DataColumn>[
+          DataColumn(
+            label: Flexible(
+              child: Center(
+                child: Text(
+                  columns[0],
+                  textAlign: TextAlign.center,
                 ),
-                DataColumn(
-                  label: Expanded(
-                    child: Center(
-                      child: Text(
-                        'Nombre científico',
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ),
+              ),
+            ),
+          ),
+          DataColumn(
+            label: Expanded(
+              child: Center(
+                child: Text(
+                  columns[1],
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+          ),
+        ],
+        rows: datosPlantas.entries.map((entry) {
+            return DataRow(
+              cells: <DataCell>[
+                DataCell(
+                  Text(entry.key)
+                ),
+                DataCell(
+                  Text(
+                    entry.value,
+                    maxLines: 3,
+                    overflow: TextOverflow.ellipsis,
+                  )
                 ),
               ],
-              rows: datosPlantas.entries.map((entry) {
-                  return DataRow(
-                    cells: <DataCell>[
-                      DataCell(
-                        Text(entry.key)
-                      ),
-                      DataCell(
-                        Text(
-                          entry.value,
-                          maxLines: 3,
-                          overflow: TextOverflow.ellipsis,
-                        )
-                      ),
-                    ],
-                  );
-                }).toList()
-            ),
-          )
-        )
+            );
+          }).toList()
       ),
     );
   }
