@@ -27,22 +27,25 @@ class DrawerItemComponent extends StatelessWidget {
           ),
         ),
         height: 50,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              icon,
-              color: Colors.white,
-            ),
-            const SizedBox(width: 10),
-            Text(
-              title,
-              style: const TextStyle(
+        child: Padding(
+          padding: const EdgeInsets.only(left: 40.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Icon(
+                icon,
                 color: Colors.white,
-                fontSize: 14,
               ),
-            ),
-          ],
+              const SizedBox(width: 10),
+              Text(
+                title,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 14,
+                ),
+              ),
+            ],
+          ),
         ),
       )
     );

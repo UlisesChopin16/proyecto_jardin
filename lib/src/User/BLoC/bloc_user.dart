@@ -1,9 +1,10 @@
 import 'dart:isolate';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:get/get.dart';
+import 'package:proyecto_jardin/src/User/Views/Widgets/snackbar_component.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class UserBloc extends GetxController {
 
@@ -61,5 +62,34 @@ class UserBloc extends GetxController {
       isLoading.value = false;
     }
     return mapa;
+  }
+
+  // metodo para abrir una url
+  Future<void> abrirUrl(BuildContext context,String url, ) async {
+    try {
+      isLoading.value = true;
+      if (await canLaunchUrlString(url)) {
+        await launchUrlString(
+          url,
+          mode: LaunchMode.platformDefault,
+        );
+      } else {
+        if(!context.mounted)return;
+        SnackBarComponent(context).snackBarError('Intenta de nuevo más tarde');
+      }
+    } catch (e) {
+      if(!context.mounted)return;
+      if(e.toString().contains('Failed host lookup')){
+        SnackBarComponent(context).snackBarError('No se pudo conectar con el servidor, intenta de nuevo más tarde');
+      }else if(e.toString().contains('Connection failed')){
+        SnackBarComponent(context).snackBarError('La conexión falló, intenta de nuevo más tarde');
+      }else if(e.toString().contains('SocketException')) {
+        SnackBarComponent(context).snackBarError('Hubo un error de conexión, intenta de nuevo más tarde');
+      }else{
+        // verificamos que haya conexión a internet
+        SnackBarComponent(context).snackBarError('Intenta de nuevo más tarde');
+        isLoading.value = false;
+      }
+    }
   }
 }

@@ -24,7 +24,7 @@ class RegistroEventoView extends StatelessWidget {
             onPressed: (){
               Scaffold.of(context).openDrawer();
             },
-          )
+          ),
         ),
         body:  SafeArea(
           child: SingleChildScrollView(
@@ -35,34 +35,23 @@ class RegistroEventoView extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children:  [
-                    Flexible(
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 25.0),
-                        child: Stack(
-                          alignment: Alignment.center,
-                          children: [
-                            Positioned(
-                              top: 0,
-                              right: 15,
-                              bottom: 0,
-                              child: Image.asset(
-                                'assets/images/logo_inah.png',
-                                color: Colors.black.withOpacity(0.2),
-                                fit: BoxFit.fitHeight,
-                              ),
-                            ),
-                            const Padding(
-                              padding: EdgeInsets.only(left: 20.0, right: 30),
-                              child: Text(
-                                '¿Te gustaría recibir novedádes y eventos próximos del jardín?',
-                                // textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  fontSize: 28,
-                                  fontWeight: FontWeight.bold
-                                ),
-                              ),
-                            ),
-                          ],
+                    Align(
+                      alignment: Alignment.topRight,
+                      child: Image.asset(
+                        height: height < 650 ? 60 : 100,
+                        'assets/images/logo_inah.png',
+                        color: Colors.black.withOpacity(0.2),
+                        fit: BoxFit.fitHeight,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 30),
+                      child: Text(
+                        '¿Te gustaría recibir novedádes y eventos próximos del jardín?',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: height < 650 ? 24 : 28,
+                          fontWeight: FontWeight.bold
                         ),
                       ),
                     ),
