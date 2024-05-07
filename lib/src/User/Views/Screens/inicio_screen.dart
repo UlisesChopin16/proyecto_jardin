@@ -20,29 +20,31 @@ class InicioView extends StatelessWidget {
         )
       ),
       body: DecoratedScreenComponent(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          const SizedBox(
-            height: 25,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30.0),
-            child: Image.asset(
-              'assets/images/logotipo.png',
-              width: width,
-              height: height * 0.2,
-              fit: BoxFit.contain,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            const SizedBox(
+              height: 25,
             ),
-          ),
-          SizedBox(height: height * 0.2),
-          const Text(
-            '¡Bienvenido!',
-            style: TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.bold
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30.0),
+              child: Image.asset(
+                'assets/images/logotipo.png',
+                width: width,
+                height: height * 0.2,
+                fit: BoxFit.contain,
+              ),
             ),
-          ),
-        ],
+            SizedBox(height: height * 0.2),
+            const Text(
+              '¡Bienvenido!',
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold
+              ),
+            ),
+          ],
+        ),
       )
     );
   }

@@ -59,7 +59,7 @@ class _FormularioState extends State<Formulario> {
               height: height * 0.32,
               child: Column(
                 mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   const Text(
                     '¡Registrate para estar enterado de todo!',
@@ -69,21 +69,27 @@ class _FormularioState extends State<Formulario> {
                       fontWeight: FontWeight.bold
                     ),
                   ),
-                  TextFormField(
-                    onChanged: onChanged,
-                    validator: validation,
-                    decoration:   InputDecoration(
-                      hintText: 'E-mail',
-                      hintStyle: const TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: width * 0.08),
+                    child: SizedBox(
+                      width: width,
+                      child: TextFormField(
+                        onChanged: onChanged,
+                        validator: validation,
+                        decoration:   InputDecoration(
+                          hintText: 'E-mail',
+                          hintStyle: const TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold
+                          ),
+                          focusedBorder: const UnderlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.black
+                            )
+                          ),
+                          border: Theme.of(context).inputDecorationTheme.border,
+                        ),
                       ),
-                      focusedBorder: const UnderlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Colors.black
-                        )
-                      ),
-                      border: Theme.of(context).inputDecorationTheme.border,
                     ),
                   ),
                   ButtonComponent(

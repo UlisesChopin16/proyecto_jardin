@@ -12,6 +12,7 @@ class RegistroEventoView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     final userBloc = Get.find<UserBloc>();
     return Obx(
       ()=> Scaffold(
@@ -30,23 +31,44 @@ class RegistroEventoView extends StatelessWidget {
             child: Padding(
               padding: userBloc.viewInsets.value,
               child: DecoratedScreenComponent(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children:  [
-                  const SizedBox(height: 25),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 30.0),
-                    child: Text(
-                      '¿Te gustaria recibir novedades y eventos próximos del jardín?',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 28,
-                        fontWeight: FontWeight.bold
+                heightChild: height * 0.55,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children:  [
+                    Flexible(
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 25.0),
+                        child: Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            Positioned(
+                              top: 0,
+                              right: 15,
+                              bottom: 0,
+                              child: Image.asset(
+                                'assets/images/logo_inah.png',
+                                color: Colors.black.withOpacity(0.2),
+                                fit: BoxFit.fitHeight,
+                              ),
+                            ),
+                            const Padding(
+                              padding: EdgeInsets.only(left: 20.0, right: 30),
+                              child: Text(
+                                '¿Te gustaría recibir novedádes y eventos próximos del jardín?',
+                                // textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: 28,
+                                  fontWeight: FontWeight.bold
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                  SizedBox(height: height * 0.1),
-                  const Formulario(),
-                ],
+                    const Formulario(),
+                  ],
+                ),
               ),
             ),
           ),

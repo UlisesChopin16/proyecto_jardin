@@ -4,14 +4,17 @@ import 'package:proyecto_jardin/src/Constants/colors.dart';
 import 'package:proyecto_jardin/src/User/BLoC/bloc_user.dart';
 
 class DecoratedScreenComponent extends StatelessWidget {
+
+  /// Por defecto la altura del hijo estara al 78% de la altura maxima
+  /// de la panatalla, para que el hijo no este enfrente de los cuadros
+  final double? heightChild;
   
-  final List<Widget> children;
-  final MainAxisAlignment mainAxisAlignment;
+  final Widget child;
 
   const DecoratedScreenComponent({ 
     super.key,
-    this.mainAxisAlignment = MainAxisAlignment.center,
-    required this.children,
+    required this.child,
+    this.heightChild,
   });
 
   @override
@@ -34,12 +37,8 @@ class DecoratedScreenComponent extends StatelessWidget {
             top: 0,
             left: 0,
             width: width,
-            height: height * 0.78,
-            child: Column(
-              mainAxisAlignment: mainAxisAlignment,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: children,
-            )
+            height: heightChild ?? height * 0.78,
+            child: child
           ),
         ],
       ),

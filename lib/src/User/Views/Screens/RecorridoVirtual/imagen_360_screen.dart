@@ -37,7 +37,7 @@ class _Imagen360ScreenState extends State<Imagen360Screen> {
     final routeArgs = ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
 
     String number = routeArgs['number'];
-    String image = 'assets/images/$number.jpg';
+    String image = 'assets/images/recorrido_virtual/$number.jpg';
 
     return Scaffold(
       extendBodyBehindAppBar: true,

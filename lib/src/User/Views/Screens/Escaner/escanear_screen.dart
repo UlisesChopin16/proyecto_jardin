@@ -4,7 +4,6 @@ import 'package:proyecto_jardin/src/Components/button_component.dart';
 import 'package:proyecto_jardin/src/Components/decorated_screen_component.dart';
 import 'package:proyecto_jardin/src/User/BLoC/bloc_user.dart';
 import 'package:proyecto_jardin/src/User/Views/Screens/Escaner/info_plantas_screen.dart';
-import 'package:proyecto_jardin/src/User/Views/Widgets/snackbar_component.dart';
 
 class EscanearView extends StatefulWidget {
   const EscanearView({ super.key });
@@ -68,26 +67,29 @@ class _EscanearViewState extends State<EscanearView> {
         ),
       ),
       body: DecoratedScreenComponent(
-        children: [
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
-              image: const DecorationImage(
-                image: AssetImage('assets/images/codigo-qr.gif'),
-                fit: BoxFit.cover
-              )
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                image: const DecorationImage(
+                  image: AssetImage('assets/images/codigo-qr.gif'),
+                  fit: BoxFit.cover
+                )
+              ),
+              width: height * 0.3,
+              height: height * 0.3,
             ),
-            width: height * 0.3,
-            height: height * 0.3,
-          ),
-          const SizedBox(
-            height: 30,
-          ),
-          ButtonComponent(
-            text: 'Escanear',
-            onPressed: _scanQR,
-          )
-        ],
+            const SizedBox(
+              height: 30,
+            ),
+            ButtonComponent(
+              text: 'Escanear',
+              onPressed: _scanQR,
+            )
+          ]
+        ),
       )
     );
   }
