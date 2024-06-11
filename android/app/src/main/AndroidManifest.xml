@@ -14,7 +14,7 @@
         </intent>
     </queries>
     <application
-        android:label="proyecto_jardin"
+        android:label="Jardín Etnobotánico"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
