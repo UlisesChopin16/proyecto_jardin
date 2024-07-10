@@ -18,11 +18,11 @@ class ListImagesComponent extends StatelessWidget {
       itemCount: nombreImagenes.length,
       itemBuilder: (context, index){
         return Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 15.0),
+          padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 0.0),
           child: Image.asset(
             'assets/images/acerca_de/${nombreImagenes[index]}.png',
             width: width,
-            height: height * 0.2,
+            height: height * 1.4,
             fit: BoxFit.contain,
           ),
         );

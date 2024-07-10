@@ -9,13 +9,7 @@ class AcercadeView extends StatelessWidget {
   const AcercadeView({Key? key});
 
   static const List<String> nombreImagenes = [
-    'logotipo',
-    'logo_principal',
-    'logo_inah',
-    'inahmor',
-    'logo_cid',
-    'logo_conahcyt-H',
-    'renajeb_logo',
+    'todos_los_logotipos',
   ];
 
   @override
